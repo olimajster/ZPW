@@ -1,0 +1,8 @@
+repozytorium - jest to zbiór folderów
+github/bitbucket/gitlab - strony do przechowywania projektów online
+git - program śledzący zmiany w kodzie
+commit - zapis zmian z opisem
+branch - osobna gałąź rozwoju kodu
+checkout - przełączenie się na inną gałąź
+merge - połączenie zmian z dwóch gałęzi
+rebase - łączenie gałęzi z uporządkowaniem historii zmian
