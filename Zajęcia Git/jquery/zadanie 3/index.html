@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+    crossorigin="anonymous"></script>
+
+    <script>
+        $(function(){
+            // $("button").on("click", function(){
+            //     console.log("Test działania");
+            // });
+
+            // $("button").click(function(){
+            //     console.log("Test działania 2")
+            // });
+
+            $("button").click(function(){
+                alert("pozygaj sie")
+            });
+
+            $("button").click(function(){
+                $("#komunikat").text("japa koniu")
+            });
+
+            $("#kwadrat").click(function(){
+                $("#kwadrat").css("background-color", "red")
+            });
+
+            $("#reset").click(function(){
+                $("#kwadrat").css("background-color", "lightgray")
+                $("#komunikat").text("")
+            });
+            let suma = 0
+            $("#policz").click(function(){
+                suma = suma + 1
+                $("#policz").text("Kliknięto: " + suma)
+            });
+        });
+    </script>
+
+    <style>
+        #kwadrat { width: 150px; height: 150px; background: lightgray; }
+    </style>
+
+    <title>Zadania jquery</title>
+</head>
+<body>
+    <button id="przywitaj">Przywitaj się</button>
+    <button id="reset">reset</button>
+    <button id="policz">policz</button>
+    <p id="policz"></p>
+    <p id="komunikat"></p>
+    
+    <div id="kwadrat"></div>
+    
+    <script>
+        $(function(){
+
+        });
+    </script>
+</body>
+</html>
