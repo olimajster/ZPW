@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+    crossorigin="anonymous"></script>
+    <title>Document</title>
+
+    <script>
+        $(function(){
+            // $("#formularz").submit(function(e){
+            //     e.preventDefault()
+            //     if($("#nick").val() === ""){
+            //         $("#info").text("Podaj nick")
+            //     }else{
+            //         $("#info").text("Witaj, " + $("#nick").val())
+            //     }
+            // })
+
+            $("#formularz").submit(function(e){
+                e.preventDefault()
+                if($("#password").val().length <= 6){
+                    $("#info").text("Haslo jest za krotkie").css("color", "red")
+                }else{
+                    $("#info").text("Zalogowano").css("color", "green")
+                }
+            })
+
+            $("#color").change(function(){
+                $("body").css("background", $(this).val())
+            })
+
+            $("#ceny").change(function(){
+                $("#info-cena").text("Do zaplaty: " + $(this).val() + "zl")
+            })
+        })
+    </script>
+    
+</head>
+<body>
+    <form id="formularz">
+        <!-- <input type="text" id="nick">
+        <button type="submit">wyslij</button> -->
+        <input type="email" id="email">
+        <input type="password" id="password">
+        <button type="submit">wyslij</button>
+    </form>
+    <p id="info"></p>
+    <hr>
+    <select id="color">
+        <option value="white">Biały</option>
+        <option value="yellow">Żółty</option>
+        <option value="lightblue">Niebieski</option>
+    </select>
+    <hr>
+    <select id="ceny">
+        <option value="20">Mala</option>
+        <option value="30">Srednia</option>
+        <option value="40">Duza</option>
+    </select>
+    <p id="info-cena"></p>
+</body>
+</html>
