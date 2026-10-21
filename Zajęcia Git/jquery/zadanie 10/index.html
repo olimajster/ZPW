@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+    crossorigin="anonymous"></script>
+    <title>Document</title>
+
+    <script>
+        $(function(){
+            $("#newsletter").change(function(){
+                if($(this).is(":checked")){
+                    $("#stan").text("zapisano do newslettera")
+                }else{
+                    $("#stan").text("wypisano z newslettera")
+                }
+            })
+
+            $("#regulamin").change(function(){
+                if($(this).is(":checked")){
+                    $("#rejestracja").prop("disabled", false)
+                }else{
+                    $("#rejestracja").prop("disabled", true)
+                }
+            })
+
+            $("#tekst").on("input", function(){
+                $("#licznik").text(100 - $(this).val().length)
+                if((100 - $(this).val().length) <= 10){
+                    $("#licznik").css("color", "red")
+                }else{
+                    $("#licznik").css("color", "black")
+                }
+            })
+        })
+    </script>
+    
+</head>
+<body>
+    <input type="checkbox" id="newsletter"> chce newsletter
+    <p id="stan"></p>
+    <hr>
+
+    <input type="checkbox" id="regulamin"> akceptuje regulamin
+    <button id="rejestracja" disabled>zarejestruj</button>
+    <hr>
+
+    <textarea id="tekst" maxlength="100"></textarea>
+    <p>podglad: <span id="licznik">100</span></p>
+</body>
+</html>
